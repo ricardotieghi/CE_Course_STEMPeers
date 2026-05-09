@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lois Sanchez — Sociology, UC Davis</title>
+  <meta name="description" content="Lois Sanchez — undergraduate researcher in sociology at UC Davis, focused on adolescent substance use and the sociology of education." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper: #f7f4ec;
+      --paper-2: #efeadc;
+      --ink: #161310;
+      --ink-soft: #3b332b;
+      --rule: #c9bfa7;
+      --accent: #7a1f1f;
+      --accent-soft: #a23a2a;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle paper texture via layered gradients */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background:
+        radial-gradient(1200px 800px at 10% -10%, rgba(122,31,31,0.05), transparent 60%),
+        radial-gradient(900px 600px at 110% 10%, rgba(60,40,20,0.05), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .topbar .mark {
+      font-family: 'Fraunces', serif; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: none; font-size: 18px; color: var(--ink);
+    }
+    .topbar nav a {
+      color: var(--ink-soft); text-decoration: none; margin-left: 22px;
+      border-bottom: 1px solid transparent; transition: border-color .2s, color .2s;
+    }
+    .topbar nav a:hover { color: var(--accent); border-color: var(--accent); }
+    @media (max-width: 720px) { .topbar nav { display: none; } }
+
+    /* ---------- Hero ---------- */
+    header.hero {
+      padding: 70px 0 60px;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: end;
+      border-bottom: 1px solid var(--rule);
+    }
+    @media (max-width: 880px) {
+      header.hero { grid-template-columns: 1fr; gap: 28px; padding: 40px 0 36px; }
+    }
+    .eyebrow {
+      font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 22px;
+    }
+    h1.name {
+      font-family: 'Fraunces', serif;
+      font-weight: 400;
+      font-variation-settings: "opsz" 144;
+      font-size: clamp(56px, 9vw, 132px);
+      line-height: 0.92;
+      letter-spacing: -0.025em;
+      margin: 0 0 18px;
+      color: var(--ink);
+    }
+    h1.name em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--accent);
+    }
+    .tagline {
+      font-family: 'Fraunces', serif; font-style: italic; font-weight: 300;
+      font-size: clamp(20px, 2.4vw, 26px); line-height: 1.4;
+      color: var(--ink-soft); max-width: 36ch; margin: 0;
+    }
+
+    .meta {
+      font-size: 14px; line-height: 1.9; color: var(--ink-soft);
+      border-left: 1px solid var(--rule); padding-left: 24px;
+    }
+    .meta dt {
+      font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--accent); margin-top: 10px;
+    }
+    .meta dd { margin: 0 0 8px; color: var(--ink); }
+    .meta a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); }
+    .meta a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .socials { display: flex; gap: 10px; margin-top: 18px; }
+    .socials a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border: 1px solid var(--rule); border-radius: 999px;
+      font-size: 13px; color: var(--ink); text-decoration: none;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .socials a:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .socials svg { width: 14px; height: 14px; }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 70px 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid; grid-template-columns: 220px 1fr; gap: 60px;
+    }
+    @media (max-width: 880px) {
+      section { grid-template-columns: 1fr; gap: 18px; padding: 48px 0; }
+    }
+    section > h2 {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.34em; text-transform: uppercase;
+      color: var(--accent);
+      align-self: start; padding-top: 8px;
+      position: sticky; top: 24px;
+    }
+    @media (max-width: 880px) { section > h2 { position: static; } }
+
+    .body-col { max-width: 720px; }
+
+    /* Profile / bio with drop cap */
+    .bio {
+      font-family: 'Fraunces', serif; font-weight: 300;
+      font-size: clamp(20px, 2.1vw, 24px); line-height: 1.55;
+      color: var(--ink);
+      margin: 0;
+    }
+    .bio::first-letter {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 5.6em;
+      float: left;
+      line-height: 0.85;
+      padding: 6px 14px 0 0;
+      color: var(--accent);
+    }
+
+    /* Education */
+    .edu .school { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 500; margin: 0 0 4px; }
+    .edu .degree { font-size: 16px; color: var(--ink-soft); margin: 0; }
+    .edu .degree b { color: var(--ink); font-weight: 500; }
+    .edu .thesis { margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--rule);
+      font-style: italic; color: var(--ink-soft); font-family: 'Fraunces', serif; font-size: 17px; }
+    .pill { display: inline-block; background: var(--paper-2); border: 1px solid var(--rule);
+      padding: 3px 10px; border-radius: 999px; font-size: 12px; color: var(--ink); margin-left: 8px; }
+
+    /* Entries (research / policy / community) */
+    .entry { padding: 22px 0; border-top: 1px solid var(--rule); }
+    .entry:first-of-type { border-top: 0; padding-top: 0; }
+    .entry-head {
+      display: flex; justify-content: space-between; gap: 24px; align-items: baseline;
+      flex-wrap: wrap; margin-bottom: 4px;
+    }
+    .entry-title {
+      font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500;
+      letter-spacing: -0.005em; color: var(--ink); margin: 0;
+    }
+    .entry-title .role { font-style: italic; font-weight: 400; color: var(--accent); }
+    .entry-date {
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-soft); white-space: nowrap;
+    }
+    .entry-sub {
+      font-size: 14px; color: var(--ink-soft); margin: 0 0 12px;
+    }
+    .entry ul {
+      list-style: none; padding: 0; margin: 0;
+    }
+    .entry ul li {
+      position: relative; padding-left: 22px; margin: 8px 0;
+      color: var(--ink); font-size: 16px; line-height: 1.6;
+    }
+    .entry ul li::before {
+      content: ""; position: absolute; left: 0; top: 0.7em;
+      width: 12px; height: 1px; background: var(--accent);
+    }
+
+    /* Lists for awards / memberships / presentations */
+    .list { padding: 0; margin: 0; list-style: none; }
+    .list li {
+      padding: 14px 0; border-top: 1px solid var(--rule);
+      display: grid; grid-template-columns: 110px 1fr; gap: 18px; align-items: baseline;
+    }
+    .list li:first-child { border-top: 0; }
+    .list li .when {
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    }
+    .list li .what { font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.45; color: var(--ink); }
+    .list li .what em { font-style: italic; color: var(--ink-soft); }
+    @media (max-width: 600px) {
+      .list li { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    /* Pub block */
+    .pub {
+      font-family: 'Fraunces', serif; font-size: 19px; line-height: 1.55; color: var(--ink);
+      padding: 20px 24px; background: var(--paper-2); border-left: 3px solid var(--accent);
+    }
+    .pub .status { display: block; margin-top: 8px; font-size: 13px; font-style: italic; color: var(--accent); }
+
+    /* Footer */
+    footer {
+      padding: 44px 0 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+      font-size: 13px; color: var(--ink-soft); letter-spacing: 0.04em;
+    }
+    footer .colophon { font-family: 'Fraunces', serif; font-style: italic; }
+
+    /* Reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    a { color: inherit; }
+
+    ::selection { background: var(--accent); color: var(--paper); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="mark">L. Sanchez</div>
+      <nav>
+        <a href="#profile">Profile</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Writing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Davis &middot; California</div>
+        <h1 class="name">Lois<br/><em>Sanchez</em></h1>
+        <p class="tagline">Sociology of education, adolescent well-being, and the quiet patterns that shape how young people grow up.</p>
+      </div>
+      <dl class="meta" id="contact">
+        <dt>Affiliation</dt>
+        <dd>University of California, Davis</dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:loissanchez@ucdavis.edu">loissanchez@ucdavis.edu</a></dd>
+        <dt>Phone</dt>
+        <dd>(310) 555-4567</dd>
+        <dt>Elsewhere</dt>
+        <dd>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/ricardotieghi" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v15H.22V8zm7.49 0h4.37v2.05h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V23h-4.56v-6.61c0-1.58-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V23H7.71V8z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://scholar.google.com/citations?user=iEROevEAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" aria-label="Google Scholar">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 9l11 7 9-5.73V17h2V9L12 2zm0 13.4L5.13 11 12 6.6 18.87 11 12 15.4zM6 14.36V18l6 3.6 6-3.6v-3.64l-6 3.6-6-3.6z"/></svg>
+              Scholar
+            </a>
+            <a href="https://github.com/ricardotieghi" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.66.5 12.04c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.55 0-.27-.01-1-.02-1.96-3.2.7-3.87-1.54-3.87-1.54-.52-1.34-1.27-1.69-1.27-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.02 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.16 1.18a10.95 10.95 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.21 0 .31.21.67.8.55A10.55 10.55 0 0 0 23.5 12.04C23.5 5.66 18.34.5 12 .5z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </dd>
+      </dl>
+    </header>
+
+    <!-- Profile -->
+    <section id="profile" class="reveal">
+      <h2>I. Profile</h2>
+      <div class="body-col">
+        <p class="bio">Creative and disciplined undergraduate student seeking graduate admission with the Sociology Department at the University of California, Davis to pursue research on substance use among adolescents and young adults.</p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="reveal edu">
+      <h2>II. Education</h2>
+      <div class="body-col">
+        <h3 class="school">University of California, Davis <span class="pill">Expected June 2025</span></h3>
+        <p class="degree"><b>Bachelor of Arts in Sociology</b>, emphasis in Law and Society &nbsp;·&nbsp; GPA 3.87 / 4.00</p>
+        <p class="thesis">Sanchez, Lois. <span style="font-style: normal;">&ldquo;Peer Effects of Adolescent Depression.&rdquo;</span> Honors thesis, in progress.</p>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="reveal">
+      <h2>III. Research</h2>
+      <div class="body-col">
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title"><span class="role">Project Manager</span> &middot; Yearbook Study</h3>
+            <span class="entry-date">Jan 2024 — Present</span>
+          </div>
+          <p class="entry-sub">Dr. Andrew Light, Associate Professor of Sociology, UC Davis</p>
+          <ul>
+            <li>Manage a database that codes yearbook photographs to measure students' looks, supporting an analysis of the relationship between attractiveness, bullying, and academic achievement.</li>
+            <li>Train 5+ new research assistants in coding procedures and address questions about coding and technical issues in an instructive, supportive manner.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title"><span class="role">Research Assistant</span> &middot; Examining Racial Bias in Police Shootings</h3>
+            <span class="entry-date">Jan 2023 — May 2024</span>
+          </div>
+          <p class="entry-sub">Dr. Carl Li, Assistant Professor of Sociology, UC Davis</p>
+          <ul>
+            <li>Collaborated with a research team to assemble a database of 11,000+ news articles on police interactions.</li>
+            <li>Developed the variable list relevant to the project for entry into the database.</li>
+            <li>Recorded details of each news article in an Excel database.</li>
+            <li>Used R to produce frequency tables and descriptive statistics that quantitatively analyze racial bias.</li>
+            <li>Trained new research assistants in R and Excel, enabling them to complete assigned tasks independently.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title"><span class="role">Literature Scholar</span> &middot; MURALS Summer Program</h3>
+            <span class="entry-date">Jun — Aug 2023</span>
+          </div>
+          <p class="entry-sub">Mentorship for Undergraduate Research in Agriculture, Letters and Science (MURALS), UC Davis</p>
+          <ul>
+            <li>Joined the 10-week MURALS summer program to begin an independent project, &ldquo;Suspension, Substance Use, and School Attachment.&rdquo;</li>
+            <li>Conducted a literature review, developed hypotheses, organized data from Monitoring the Future, and began analysis in Stata.</li>
+            <li>Met weekly with a faculty advisor to receive feedback, share progress, and identify next steps.</li>
+            <li>Presented initial findings and future plans at the closing MURALS conference.</li>
+            <li>Completed the first draft of the research paper and laid out future plans for the project.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title"><span class="role">Undergraduate Mentee</span> &middot; Research Training and Mentorship Program</h3>
+            <span class="entry-date">Jan 2022 — Jun 2023</span>
+          </div>
+          <p class="entry-sub">Humanities and Social Sciences, UC Davis</p>
+          <ul>
+            <li>Paired with a graduate-student mentor to develop a foundation in academic research and analytical skills.</li>
+            <li>Built a foundation in sociology research by analyzing scholarly articles and identifying their strengths and weaknesses.</li>
+            <li>Developed a research grant proposal for the Provost Undergraduate Fellowship (awarded July 2022).</li>
+            <li>Presented the research proposal at the program's closing Roundtable Conference.</li>
+            <li>Attended workshops on research questions, proposal development, grant writing, and graduate / professional school applications.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title"><span class="role">Research Assistant</span> &middot; Modern Test of Power Control Theory of Gender &amp; Delinquency</h3>
+            <span class="entry-date">Summer 2021</span>
+          </div>
+          <p class="entry-sub">Dr. Bobby Guzman, Professor of Sociology, UC Davis</p>
+          <ul>
+            <li>Created a list of project-relevant measures from the Monitoring the Future dataset.</li>
+            <li>Collected and reviewed articles for the literature review and used Stata to extract variables from the dataset.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Public policy -->
+    <section id="policy" class="reveal">
+      <h2>IV. Public Policy</h2>
+      <div class="body-col">
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title"><span class="role">Public Policy Fellow</span> &middot; UC Davis Center for Poverty Research</h3>
+            <span class="entry-date">Sep 2022 — Dec 2024</span>
+          </div>
+          <p class="entry-sub">Sacramento, CA</p>
+          <ul>
+            <li>Researched legislators currently sponsoring or voting on poverty-related bills and recorded findings in a working journal.</li>
+            <li>Maintained a list of legislators to whom academic research on poverty was disseminated.</li>
+            <li>Filmed and edited interview videos with research affiliates across Economics, Psychology, Sociology, and Law.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section id="community" class="reveal">
+      <h2>V. Community</h2>
+      <div class="body-col">
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title"><span class="role">Outreach &amp; Development Intern</span> &middot; Davis Feminist Film Festival</h3>
+            <span class="entry-date">May 2022</span>
+          </div>
+          <p class="entry-sub">Davis, CA</p>
+          <ul>
+            <li>Curated more than 70 film submissions for a festival that drew over 250 patrons.</li>
+            <li>Collaborated with fellow interns on the final film line-up using shared interpretive criteria.</li>
+            <li>Marketed the festival via social media, tabling, and outreach emails — increasing attendance by 30% over the prior year.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Presentations -->
+    <section id="presentations" class="reveal">
+      <h2>VI. Presentations</h2>
+      <div class="body-col">
+        <ul class="list">
+          <li>
+            <span class="when">Mar 2024</span>
+            <span class="what">&ldquo;How to Get Involved in Research as an Undergraduate.&rdquo; <em>Invited workshop, Undergraduate Research Training and Mentorship Program. Davis, CA.</em></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Conference Presentations -->
+    <section id="conferences" class="reveal">
+      <h2>VII. Conference Presentations</h2>
+      <div class="body-col">
+        <ul class="list">
+          <li>
+            <span class="when">Jan 2024</span>
+            <span class="what">&ldquo;What Does Research in Sociology Look Like?&rdquo; <em>Panelist, UC Davis Undergraduate Research Week. Davis, CA.</em></span>
+          </li>
+          <li>
+            <span class="when">Aug 2023</span>
+            <span class="what">&ldquo;Suspension, Substance Use, and School Attachment.&rdquo; <em>MURALS End-of-Program Conference. Davis, CA.</em></span>
+          </li>
+          <li>
+            <span class="when">Jun 2022</span>
+            <span class="what">Provost Undergraduate Fellowship Research Proposal. <em>Roundtable Conference, Research Training and Mentorship Program. Davis, CA.</em></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" class="reveal">
+      <h2>VIII. Awards</h2>
+      <div class="body-col">
+        <ul class="list">
+          <li>
+            <span class="when">2022</span>
+            <span class="what">UC Davis Undergraduate Research Travel Grant <em>— awarded to present at ASA 2016 ($500).</em></span>
+          </li>
+          <li>
+            <span class="when">2022</span>
+            <span class="what">UC Davis Provost Undergraduate Fellowship <em>($330).</em></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="reveal">
+      <h2>IX. Writing</h2>
+      <div class="body-col">
+        <div class="pub">
+          Sanchez, Lois &amp; Li, Carl. &ldquo;Suspension, Substance Use, and School Attachment.&rdquo;
+          <span class="status">Under review &middot; <em>Research in the Sociology of Education</em>, University of California, Davis.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Memberships -->
+    <section id="memberships" class="reveal">
+      <h2>X. Memberships</h2>
+      <div class="body-col">
+        <ul class="list">
+          <li>
+            <span class="when">2021 — Now</span>
+            <span class="what">American Sociological Association <em>— Member, UC Davis chapter.</em></span>
+          </li>
+          <li>
+            <span class="when">2021 — 2022</span>
+            <span class="what">Alpha Kappa Delta International Sociology Honor Society <em>— Member, UC Davis chapter.</em></span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <span class="colophon">Set in Fraunces &amp; Inter. Typeset for the web, <span id="yr"></span>.</span>
+      <span>&copy; <span id="yr2"></span> Lois Sanchez</span>
+    </footer>
+
+  </div>
+
+  <script>
+    // Year stamps
+    const y = new Date().getFullYear();
+    document.getElementById('yr').textContent = y;
+    document.getElementById('yr2').textContent = y;
+
+    // Reveal-on-scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
